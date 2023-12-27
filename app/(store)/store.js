@@ -3,12 +3,12 @@ import { create } from "zustand";
 const useCart = create((set, get) => ({
   cart: [],
   product: {},
-  opneModal: false,
+  openModal: false,
   setOpenModal: () => {
     set((state) => {
       return {
         ...state,
-        opneModal: !state.opneModal
+        openModal: !state.openModal
       };
     });
   },

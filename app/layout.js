@@ -2,8 +2,13 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import Header from "./Header";
+//import localFont from "@next/font/local";
 
 const inter = Inter({ subsets: ["latin"] });
+
+// const myFont = localFont({
+//   src: "/Library/Fonts/zsynorEBO.ttf"
+// });
 
 export const metadata = {
   title: "Twisted Stitch",
@@ -28,6 +33,7 @@ export default function RootLayout({ children }) {
         <footer className="flex items-center flex-wrap justify-center border-t-2 border-solid border-indigo-900 p-4 md:p-8">
           <i className="fa-brands fa-square-instagram text-slate-700 hover:text-slate-500 cursor-pointer text-2xl sm:text-3xl md:text-4xl"></i>
         </footer>
+        <div id="portal"></div>
       </body>
     </html>
   );
