@@ -2,13 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import Header from "./Header";
-//import localFont from "@next/font/local";
 
 const inter = Inter({ subsets: ["latin"] });
-
-// const myFont = localFont({
-//   src: "/Library/Fonts/zsynorEBO.ttf"
-// });
 
 export const metadata = {
   title: "Twisted Stitch",
