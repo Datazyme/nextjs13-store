@@ -24,9 +24,11 @@ export default function RootLayout({ children }) {
       </head>
       <body className={"min-h-screen flex flex-col relative" + inter.className}>
         <Header></Header>
-        <div className="flex-1">{children}</div>
-        <footer className="flex items-center flex-wrap justify-center border-t-2 border-solid border-indigo-900 p-4 md:p-8">
-          <i className="fa-brands fa-square-instagram text-slate-700 hover:text-slate-500 cursor-pointer text-2xl sm:text-3xl md:text-4xl"></i>
+        <div className="flex-1 bg-gradient-to-b from-yellow-200 to-rose-900">
+          {children}
+        </div>
+        <footer className="flex items-center flex-wrap justify-center border-t-2 border-solid border-black bg-rose-900 p-4">
+          <i className="fa-brands fa-square-instagram text-yellow-200 hover:text-slate-500 cursor-pointer text-2xl sm:text-3xl md:text-4xl"></i>
         </footer>
         <div id="portal"></div>
       </body>

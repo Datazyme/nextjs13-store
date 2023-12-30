@@ -16,7 +16,7 @@ export default function Header() {
   const openModal = useCart((state) => state.openModal);
   const setOpenModal = useCart((state) => state.setOpenModal);
   return (
-    <header className="sticky top-0 p-6 bg-white bg-yellow-200 border-b-2 border-solid border-indigo-900 shadow-md z-50 text-2xl sm:text-3xl md:text-4xl sm:p-8 flex item-center justify-between">
+    <header className="sticky top-0 p-6 bg-yellow-200 border-b-2 border-solid border-indigo-900 shadow-md z-50 text-2xl sm:text-3xl md:text-4xl sm:p-8 flex item-center justify-between">
       {openModal && <Modal />}
       <Link href={"/"}>
         <h1
