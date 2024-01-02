@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
-require("dotenv").config();
 
 export async function POST(request) {
   // if (request.method !== 'POST') { return res.sendStatus(405) }
@@ -13,6 +12,7 @@ export async function POST(request) {
   }
 
   try {
+    require("dotenv").config();
     const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
       apiVersion: "2020-08-27"
     });

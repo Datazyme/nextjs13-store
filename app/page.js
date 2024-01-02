@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Stripe from "stripe";
 import ProductCard from "./PorductCard";
-require("dotenv").config();
 
 async function getStripeProducts() {
   const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
