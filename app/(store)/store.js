@@ -22,17 +22,21 @@ const useCart = create((set, get) => ({
       };
     });
   },
+
   addItemsToCart: (params) => {
+    //console.log(params);
     const { newItem } = params;
     set((state) => {
       const newCart = [...state.cart, newItem];
+      //console.log(newCart);
       return {
         ...state,
         cart: newCart
       };
     });
   },
-  removeItemsFromCart: (params) => {
+
+  removeItemFromCart: (params) => {
     const { itemIndex } = params;
     set((state) => {
       const newCart = state.cart.filter((element, elementIndex) => {
@@ -44,6 +48,7 @@ const useCart = create((set, get) => ({
       };
     });
   },
+
   emptyCart: () => {
     set((state) => {
       const newCart = [];
@@ -55,3 +60,19 @@ const useCart = create((set, get) => ({
   }
 }));
 export default useCart;
+
+// removeItemsFromCart: () => {
+//   // console.log(params);
+//   // const { itemIndex } = params;
+//   set((state) => {
+//     const newCart = state.cart.filter((element, elementIndex) => {
+//       console.log(elementIndex);
+//       console.log(state.cart);
+//       return elementIndex;
+//     });
+//     return {
+//       ...state,
+//       cart: newCart
+//     };
+//   });
+// },

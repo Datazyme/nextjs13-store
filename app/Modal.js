@@ -7,7 +7,17 @@ import { useRouter } from "next/navigation";
 export default function Modal() {
   const closeModal = useCart((state) => state.setOpenModal);
   const cartItems = useCart((state) => state.cart);
+  const removeAll = useCart((state) => state.emptyCart);
+  const removeItem = useCart((state) => state.removeItemsFromCart);
   const router = useRouter();
+  //console.log(cartItems);
+
+  function empty() {
+    removeAll();
+  }
+  // function remove() {
+  //   removeItem();
+  // }
 
   async function checkout() {
     const lineItems = cartItems.map((cartItem) => {
@@ -58,18 +68,28 @@ export default function Modal() {
                       <p>${cartItem.cost / 100}</p>
                     </div>
                     <p className="text-slate-600 text-sm">Quantity: 1</p>
+                    {/* <div onClick={remove} className="text-slate-600 text-sm">
+                      remove
+                    </div> */}
                   </div>
                 );
               })}
             </>
           )}
         </div>
+
         <div
           onClick={checkout}
-          className="border border-solid border-slate-700 text-xl m-4 p-6 uppercase grid place-items-center hover:opacity-60 cursor-pointer"
+          className="border border-solid border-slate-700 text-xl m-4 p-2 mb-2 uppercase grid place-items-center hover:opacity-60 cursor-pointer"
         >
           Checkout
         </div>
+        <button
+          onClick={empty}
+          className="border border-solid border-slate-700 text-xl m-4 p-2 mb-12 uppercase grid place-items-center hover:opacity-60 cursor-pointer"
+        >
+          Empty Cart
+        </button>
       </div>
     </div>,
     document.getElementById("portal")

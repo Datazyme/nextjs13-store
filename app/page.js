@@ -15,7 +15,7 @@ async function getStripeProducts() {
 
 export default async function Home() {
   const products = await getStripeProducts();
-  console.log(products);
+  //console.log(products);
 
   return (
     <main className="p-4 flex flex-col">
