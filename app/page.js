@@ -1,15 +1,12 @@
 import Image from "next/image";
 import Stripe from "stripe";
 import ProductCard from "./PorductCard";
+require("dotenv").config();
 
 async function getStripeProducts() {
-  const stripe = new Stripe(
-    "sk_test_51OQzZdAwOLpdQ6i972OWIYwEiViPc3XR4ZJg6HywTsnYJjxxP1R2bUYYufvVmC0RKrE240A1kNXu2awdHrivUjvj00Aqd2wvjK" ??
-      "",
-    {
-      apiVersion: "2020-08-27"
-    }
-  );
+  const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
+    apiVersion: "2020-08-27"
+  });
   const res = await stripe.prices.list({
     expand: ["data.product"]
   });
