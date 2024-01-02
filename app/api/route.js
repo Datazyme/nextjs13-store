@@ -12,9 +12,13 @@ export async function POST(request) {
   }
 
   try {
-    const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
-      apiVersion: "2020-08-27"
-    });
+    const stripe = new Stripe(
+      "sk_test_51OQzZdAwOLpdQ6i972OWIYwEiViPc3XR4ZJg6HywTsnYJjxxP1R2bUYYufvVmC0RKrE240A1kNXu2awdHrivUjvj00Aqd2wvjK" ??
+        "",
+      {
+        apiVersion: "2020-08-27"
+      }
+    );
 
     const session = await stripe.checkout.sessions.create({
       success_url: "http://localhost:3000/success",

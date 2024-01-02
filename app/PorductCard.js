@@ -26,7 +26,7 @@ export default function ProductCard(props) {
   return (
     <div
       onClick={onProductClick}
-      className="flex flex-col shadow bg-white hover:shadow-lg cursor-pointer"
+      className="flex flex-col shadow bg-transparent border border-black hover:shadow-lg cursor-pointer"
     >
       <img src={productInfo.images[0]} alt={name} className="w-full p-4"></img>
       <div className="flex flex-col gap-2 p-4">
