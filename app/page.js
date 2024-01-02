@@ -2,6 +2,7 @@ import Image from "next/image";
 import Stripe from "stripe";
 import ProductCard from "./PorductCard";
 
+//to check git origin
 async function getStripeProducts() {
   const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
     apiVersion: "2020-08-27"
